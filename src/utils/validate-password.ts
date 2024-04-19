@@ -1,4 +1,4 @@
-import { Setting } from "../store/app-store";
+import { Setting } from "@/store/app-store";
 
 export const validatePassword = (settings: Setting | null) => {
   if (settings === null) return () => null;
@@ -8,7 +8,11 @@ export const validatePassword = (settings: Setting | null) => {
   if (settings.lowercase) regexParts.push("(?=.*[a-z])");
   if (settings.figures) regexParts.push("(?=.*\\d)");
   if (settings.special) regexParts.push("(?=.*[@_$!%*#?&])");
-  if (settings.length) regexParts.push(`.{8,}`);
+  if (settings.length) {
+    regexParts.push(`.{8,}`);
+  } else {
+    regexParts.push(`.{1,}`);
+  }
 
   return regexParts.join("");
 };

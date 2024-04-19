@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useAppStore } from "../../store/app-store";
-import { validatePassword } from "../../utils/validate-password";
-import { getPasswordStrength } from "../../utils/password-strength";
+import { useAppStore } from "@/store/app-store";
+import { validatePassword } from "@/utils/validate-password";
+import { getPasswordStrength } from "@/utils/password-strength";
 import { useState } from "react";
 
 type InputFields = {
@@ -25,6 +25,7 @@ const RegistrationForm = (props: RegisterFormProps) => {
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<InputFields>({ mode: "onChange" });
+
   const onSubmit: SubmitHandler<InputFields> = (data) => handleOnSubmit(data);
 
   return (
@@ -57,7 +58,7 @@ const RegistrationForm = (props: RegisterFormProps) => {
             />
           </label>
           {errors.email && (
-            <p role="alert" className=" text-red-500 text-[12px]">
+            <p role="alert" className=" text-red-500 text-[14px] mt-2">
               {errors.email.message}
             </p>
           )}
@@ -97,7 +98,7 @@ const RegistrationForm = (props: RegisterFormProps) => {
             <span>{passwordStrength}</span>
           </label>
           {errors.password && (
-            <p className=" text-red-500 text-[12px]">
+            <p className=" text-red-500 text-[14px] mt-2">
               {errors.password.message}
             </p>
           )}

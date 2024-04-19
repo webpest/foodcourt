@@ -1,6 +1,6 @@
-import Header from "../components/header/Header";
-import RegistrationForm from "../components/reg-form/RegistrationForm";
-import { useAppStore } from "../store/app-store";
+import Header from "@/components/header/Header";
+import RegistrationForm from "@/components/reg-form/RegistrationForm";
+import { useAppStore } from "@/store/app-store";
 
 function App() {
   const isSettingSet = useAppStore((state) => state.setting !== null);

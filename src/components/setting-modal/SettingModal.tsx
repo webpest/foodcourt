@@ -1,7 +1,7 @@
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import { useState } from "react";
-import { Setting, useAppStore } from "../../store/app-store";
+import { Setting, useAppStore } from "@/store/app-store";
 
 type SettingModalProps = {
   open: boolean;
